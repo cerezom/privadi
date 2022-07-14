@@ -1,0 +1,50 @@
+*, html{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: url("../images/crypo_bg.svg"),linear-gradient(180.61deg, #1F1508 9.19%, #1E1702 53.76%, #312402 72.91%, #312402 86.88%, #312402 99.48%);
+    background-repeat: repeat;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1rem;
+}
+h2{
+    margin-top: 0;
+}
+input:active, input:focus{
+    border: none;
+    outline: none;
+}
+
+::placeholder {
+    color: #FFFFFF;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #FFFFFF;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: #FFFFFF;
+  }
+input:focus::placeholder {
+    color: transparent;
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+  .upper-footer{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #F8951D;
+  }

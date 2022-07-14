@@ -1,0 +1,32 @@
+.modalcard{
+    animation: animation 0.s;
+    color: pink;
+    position: fixed;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    /* height: 50vh; */
+    padding: 4rem;
+    background: #160D01;
+box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.0357507);
+border-radius: 6px;
+    overflow: hidden;
+    
+}
+
+
+.homemodalcard{
+    color: aquamarine;
+    height: 50vh;
+    padding: 4rem;
+    background: purple;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+.modalcard-top h1{
+    font-weight: 800px;
+    font-size: 2rem;
+}
