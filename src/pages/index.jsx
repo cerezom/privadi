@@ -34,6 +34,8 @@ import deborah from "../assets/images/team-members/Deborah.JPG"
 import mark from "../assets/images/team-members/Mark.jpg"
 import raphael from "../assets/images/team-members/Raphael.jpg"
 import vlasta from "../assets/images/team-members/Vlasta.jpg"
+import Hayato from "../assets/images/team-members/Hayato.png"
+import ayio from "../assets/images/team-members/ayio.jpg"
 import { ReactComponent as PractSvg } from "../assets/images/practice.svg";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
@@ -49,6 +51,7 @@ import Collapse from '@material-ui/core/Collapse';
 import useOnClickOutside from "../helper-functions/use-onclick-outside";
 import useStyles from "../components/useStyle";
 import tokenchart1 from "../assets/images/tokenchart1.svg";
+
 
 export default function Home() {
   const [isResponsiveButton, setResponsiveButton] = useState("false");
@@ -69,6 +72,13 @@ export default function Home() {
   const footerSubmitRef = useRef()
   const [openAlert, setOpenAlert] = useState(false);
 
+  const breakPoints = [
+    { width: 1, itemsToShow: 1 },
+    { width: 550, itemsToShow: 2 },
+    { width: 768, itemsToShow: 3 },
+    { width: 1200, itemsToShow: 4 },
+  ];
+  
   const handleNavBarResponsiveness = () => {
     setResponsiveButton(!isResponsiveButton);
     setResponsiveNavBar(!isResponsiveNavBar);
@@ -188,7 +198,7 @@ export default function Home() {
             Overview
           </a>
           <a href="#home-content" onClick={scrollIntoView}>
-            NFTs
+            NFT
             Market Place
           </a>
           <a href="#token-economics" onClick={scrollIntoView}>
@@ -200,9 +210,30 @@ export default function Home() {
           <a href="#tokenomics" onClick={scrollIntoView}>
             Tokenomics
           </a>
-          <a href="#our-team" onClick={scrollIntoView}>
-            Doc
-          </a>
+          <div className="language-dropdown">
+            <div className="language-title" onClick={handleMenudropdown}>
+              <span>Doc</span>
+              <img
+                src={dropdownArrow}
+                alt="drop down arrow"
+                className="lang-dropdown" />
+            </div>
+            <div className="language-list">
+              <a href="#" onClick={handleLanguage}>
+                WhitePaper
+              </a>
+              <a href="#" onClick={handleLanguage}>
+              Constitution
+              </a>
+              <a href="#" onClick={handleLanguage}>
+              Project KYC Certificate
+              </a>
+              <a href="#" onClick={handleLanguage}>
+              Certificate of Incorporation
+              </a>
+              </div>
+                </div>
+          
           <div className="language-dropdown">
             <div className="language-title" onClick={handleMenudropdown}>
               <span>{language} </span>
@@ -235,9 +266,13 @@ export default function Home() {
                   <a href="#"><img src={tiktokIcon} alt="tiktok" className="social-icon" /></a>
               </div> */}
       </Header>
+      <br />
       <section id="home-content">
         <div id="top-subscribe">
           <div className="subscribe">
+            <br />
+            <br />
+
             <Tooltip
               open={openTooltip}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
@@ -246,7 +281,8 @@ export default function Home() {
               disableHoverListener
               disableTouchListener
               title={<>
-                <div className="tooltip-container"><img src={priorityIcon} alt="priority icon" /><p>{postContent}</p></div>
+                <div
+              className="tooltip-container"><img src={priorityIcon} alt="priority icon" /><p>{postContent}</p></div>
               </>}
               placement="bottom-start" arrow
             >
@@ -257,9 +293,12 @@ export default function Home() {
                 onChange={e => {
                   setHeaderEmail(e.target.value);
                   setInputValue(e.target.value);
-                } } />
+                } }
+              />
             </Tooltip>
             <button ref={topSubmitRef} onClick={() => handleEmailCollector("header")}>Subscribe</button>
+            <br />
+            <br />
           </div>
         </div>
         <div className="social-contact top-social">
@@ -302,7 +341,7 @@ export default function Home() {
             <img src={redditIcon} alt="reddit" className="social-icon" />
           </a>
           <a
-            href="https://medium.com/@crypto528"
+            href="https://medium.com/@Crypto528DAO"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -316,13 +355,15 @@ export default function Home() {
             <img src={tiktokIcon} alt="tiktok" className="social-icon" />
           </a>
           <a
-            href="https://discord.gg/V3jYNFpK"
+            href="https://discord.gg/WYfAxsNz2h"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={discordIcon} alt="discord" className="social-icon" />
           </a>
         </div>
+        <br />
+        <br />
         <Carousel
           infiniteLoop
           useKeyboardArrows
@@ -340,7 +381,6 @@ export default function Home() {
               <h2>Welcome to Crypto528 DAO Republik!</h2>
               <p>A crypto Republik made by the people...for the people</p>
               <img src={fullGlobe} alt="" className="small-scr-img" />
-
             </div>
             <div className="dod">
               <img src={fullGlobe} alt="" />
@@ -374,12 +414,16 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
+      <br />
+      <br />
     <section className="token-economics" id="token-economics">
         <ScrollAnimation
           animateIn="slideInUp"
           animateOut="slideOutUp"
           duration={1}
         >
+          <br />
+          <br />
           <h2 className="token-economics-title">
             <span className="orange">Crypto528</span> Ecosystem
           </h2>
@@ -468,7 +512,7 @@ export default function Home() {
               <img className="card-icon " src={nftIcon} alt="" />
               <p className="card-title">Artificial Intelligence (AI)</p>
               <p className="card-content">
-                The Republik will set up an artificial intelligence at the service of its citizens. Samantha, a neural network, will scan the order flow of a large quantify of crypto assets and will select, based on risk and performance ratios, the ones with the highest risk rewards ratios as well as the holdings' percentage. Thanks to its machine learning and deep learning protocols, Samantha will play a significant role in the development of the Vault and therefore the community wealth and well-being.
+              The Republik will set up an artificial intelligence neural network named Samantha which will be at the service of its citizens. Thanks to its machine learning and deep learning protocols, Samantha will scan the order flow of crypto assets and will select, based on risk and performance ratios, the ones with the highest risk rewards ratios
               </p>
             </div>
           </div>
@@ -524,14 +568,13 @@ export default function Home() {
             <div className="card-content">
               <ul>
                 <li>Governance token is issued </li>
-                <li>Crypto asset purchases are proposed</li>
+                <li>Crypto mine begins operation</li>
                 <li>Major exchange listing 1</li>
-                <li>Evaluation of cryptocurrency mining proposal</li>
               </ul>
             </div>
           </div>
           <div className="tiles-card pos-absolute pos-3">
-            <img className="fl-right" src={finish} alt="" />
+            <img className="fl-right" src={finish} alt=""/>
             <p className="card-title">Q1 2023</p>
             <div className="card-content">
               <ul>
@@ -636,29 +679,30 @@ export default function Home() {
             <img src={tokenchart} alt="" className="tokenomics-piechart" />
           </ScrollAnimation>
         </div>
-      </section><section className="our-team" id="our-team">
-        <ScrollAnimation
-          animateIn="slideInUp"
-          animateOut="slideOutUp"
-          duration={1}
-        >
-            <h2 className="tokenchart1"> <span className="orange">Use of Seed</span>Round Proceeds</h2>
+        <br />
+            <h2 className="tokenchart1"> <span className="orange">Use of </span> Proceeds</h2>
           <ScrollAnimation 
           animateIn="zoomIn" animateOut="zoomOut" duration={1.7}>
           <div className="tokenchart1">
             <img src={tokenchart1} alt="" />
           </div>
       </ScrollAnimation>
-          <h2>
-            <span className="orange">Our</span> Team
-          </h2>
+      </section><section className="Our-team" id="Our-team">
+        <ScrollAnimation
+          animateIn="slideInUp"
+          animateOut="slideOutUp"
+          duration={1}
+        >
+          <h2 className="tokenomics-title"> <span className="orange">Our</span> Team</h2>
         </ScrollAnimation>
-      </section><p className="our-team-content">
-        The Crypto528 Team combines a passion for esports, industry experise &
-        proven record in finance, development, marketing & licensing.
-      </p><h4>
-        THE <span className="orange">PROJECT</span> TEAM
-      </h4><div className="members">
+        <p className="our-team-content">
+        The Crypto528 Team combines a passion for esports, industry experise & proven record in finance, development, marketing & licensing.
+        </p>
+    </section>
+      <h2>
+        <span className="orange1"> THE PROJECT</span> TEAM
+      </h2>
+      <div className="members">
         <div className="member-card">
           <img src={deborah} alt="Deborah Akiara" className="profile-img" />
           <p className="member-name orange">Deborah Akiara</p>
@@ -730,10 +774,38 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <div className="member-card">
+          <img src={Hayato} alt="Hayato Suzuki" className="profile-img" />
+          <p className="member-name orange">Hayato Suzuki</p>
+          <p className="member-title">Project Leader</p>
+          <div className="member-social-acct">
+            <a href="https://www.linkedin.com/in/hayatosuzuki801293/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedin} alt="linkedin logo" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <img src={twitter} alt="" />
+            </a>
+          </div>
+        </div>
+        <div className="member-card">
+          <img src={ayio} alt="Ayiolely Lurogho" className="profile-img" />
+          <p className="member-name orange"> Ayoleyi Lurogho</p>
+          <p className="member-title">Product Designer</p>
+          <div className="member-social-acct">
+            <a href="https://www.linkedin.com/in/ayoleyi-lurogho/" target="_blank" rel="noopener noreferrer">
+              <img src={linkedin} alt="linkedin logo" />
+            </a>
+            <a href="https://twitter.com/lurogho_eth" target="_blank" rel="noopener noreferrer">
+              <img src={twitter} alt="" />
+            </a>
+          </div>
+        </div>
       </div>
+      
       <br></br>
       <br></br>
-      <h4>THE <span className="orange">ADVISORY</span> BOARD</h4>
+      <h3><span className="orange1"> THE 
+      ADVISORY</span> BOARD</h3>
         <div className="members">
           <div className="member-card">
             <button type="button">
@@ -802,135 +874,91 @@ export default function Home() {
           animateIn="zoomInUp"
           animateOut="zoomOutUp"
           duration={1.5}
-        >
-        <div className="tiles-card">
-        <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>What is the purpose of Crypto528?</b>
-            <br></br>
-            <br></br>
-            The mission of Crypto528 is to bring positive change to the world by creating a community of like-minded individuals with a focus on supporting blockchain technology, sustainable development, human rights, and helping those in need.
-            <br></br>
-            <br></br>
-            <b>What is a DAO?</b>
-            <br></br>
-            <br></br>
-            A Decentralized Autonomous Organization (DAO) is a community-based organization that is collectively owned and managed by its members. DAOs have built-in treasuries so no one has the authority to access funds without the approval of the group. Decisions are governed by proposals and voting to ensure everyone in the organization has a voice. Every decision and transaction is transparent, and the rules around spending the organization’s money are coded directly into smart contracts which are unable to be altered. All major company decisions are made by tokenholders, creating a strong sense of community and project ownership.
-          </p>
-        </div>
-        <div className="tiles-card">
-          <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>What is a Crypto Republik?</b>
-            <br></br>
-            A crypto republic is a decentralized blockchain society that has an official set of rules such as a Constitution, which is specifically designed to protect the rights of each individual Citizen. In the Crypto528 Republik, Citizens can elect Chancellors to represent them on the DAO governance board which is known as the 528 Order. By encoding the rights of Citizens into  smart contracts, the power of the society always remains in the hands of its people.
-            <br></br>
-          </p>
-        </div>
-        <div className="tiles-card">
-          <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>Who are Citizens of the Crypto Republik?</b>
-            <br></br>
-            <br></br>
-            The Citizen (C-528) token provides holders membership to the Crypto528 DAO Republik, enabling them to become Citizens and giving them the following rights:
-            <br></br>
-            <br></br>
-            -Are able to cast votes in 528 Order elections that occur every four years
-            <br></br>
-            <br></br>
-            -Approve access to the Republik vault
-            <br></br>
-            <br></br>
-            -Able to submit voting proposals by locking up 1,000,000 C-528 tokens for a four month period from the date the proposal is submitted
-            <br></br>
-            <br></br>
-            -Can submit a vote to overturn 528 Order proposals
-            <br></br>
-            <br></br>
-            -C-528 holders can stake their tokens to earn staking rewards
-            <br></br>
-            <br></br>
-            -Can vote to impeach the 528 Order  
-          </p>
-        </div>
-        <div className="tiles-card">
-          <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>What is the 528 Order?</b>
-            <br></br>
-            <br></br>
-            Every four years the Republik will hold elections, where Citizens can cast votes to elect eight Chancellors and one Overseer to create the 528 Order. The primary function of the 528 Order is to act as a governance board that manages and guides the Republik. This is accomplished through the use of voting proposals that are submitted by Chancellors to the 528 Order. In order for a voting proposal to pass, there must be a minimum quorum of 50% of Chancellors present and at least 75% of those participating must vote in favour. In addition, any proposals that require the use of the Republik's treasury must also be submitted to Citizens for voting approval.
-          </p>
-        </div>
-        <div className="tiles-card">
-          <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>What does a Chancellor do?</b>
-            <br></br>
-            <br></br>
-            A Chancellor is elected by the Republik Citizens to represent them on the 528 Order. There are a total of 8 Chancellors who work together to manage the operations of the Republik. The duty of Chancellors is to manage, oversee and guide the DAO’s operations. This is done by the submission of voting proposals to be voted on by the 528 Order. The rights of the Chancellors are as follows:
-            <br></br>
-            <br></br>
-            -Holds a seat on the 528 Order and has 1 vote
-            <br></br>
-            <br></br>
-            -Chancellors (G-528 holders) may submit unlimited voting proposals to the 528 Order at no cost
-            <br></br>
-            <br></br>
-            -Can form political parties
-            <br></br>
-            <br></br>
-            -Are elected by Citizens (C-528 holders) every 4 years
-            <br></br>
-            <br></br>
-            -Each Chancellor (G-528 holder) can stake their token enabling them to earn 1% of any monthly staking rewards paid out by the DAO
-            <br></br>
-            <br></br>
-            -Can be impeached at any time by Citizens (C-528 holders) or the Overseer (O-528) if approved by vote
-          </p>
-        </div>
-        <div className="tiles-card">
-          <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>Who is the Overseer?</b>
-            <br></br>
-            <br></br>
-            -The Overseer (O-528 holder) is an independent citizen representative that oversees the 528 Order. Unlike Chancellors (G-528 holders), the Overseer does not have any voting rights in the 528 Order. The role of the Overseer is to ensure that all voting proposals submitted are adhering the Crypto528 constitution and bylaws. The rights of the Overseer (O-528 holder) are listed below:
-            <br></br>
-            <br></br>
-            -Can submit voting proposals to Citizens (C-528 holders) that can impeach Chancellors (G-528 holders)
-            <br></br>
-            <br></br>
-            -Are elected by Citizens (C-528 holders) every 4 years
-            <br></br>
-            <br></br>
-            -The Overseer (O-528 holder) can stake their token enabling them to earn 2% of any monthly staking rewards paid out by the DAO
-            <br></br>
-            <br></br>
-            -Can be impeached at any time by C-528 tokenholders if approved by vote
-            <br></br>
-            <br></br>
-            -Requires 1,000,000 C-528 tokens to be eligible to be elected and the must be staked for duration of their elected term. If they are impeached by Citizens at any point during their term, they forfeit their 1,000,000 token stake and it is placed into the Republik treasury
-          </p>
-        </div>
-        <div className="tiles-card">
-          <img className="card-icon " src="" alt="" />
-          <p className="card-title"></p>
-          <p className="card-content">
-            <b>What is a Republik Vault?</b>
-            <br></br>
-            <br></br>
-            All assets of the DAO are held in the Republik Vault which can only be accessed through voting proposals that are sent to Citizens for approval. Any vote requesting access to the Vault must have a minimum quorum of 5% of total C-528 tokenholders present. If 60% of those C-528 holders who are participating vote in favour, the proposal will pass and be approved for actioning.
-          </p>
-        </div>
-        </ScrollAnimation>
+        ></ScrollAnimation>
+        <div> 
+          <Carousel breakPoints={breakPoints}>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>What is the purpose of Crypto528?</b></h3>
+          The mission of Crypto528 is to bring positive change to the world by creating a community of like-minded individuals with a focus on supporting blockchain technology, sustainable development, human rights, and helping those in need.
+</p>
+          </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>What is a DAO?</b></h3>
+          A Decentralized Autonomous Organization (DAO) is a community-based organization that is collectively owned and managed by its members. DAOs have built-in treasuries so no one has the authority to access funds without the approval of the group. Decisions are governed by proposals and voting to ensure everyone in the organization has a voice. Every decision and transaction is transparent, and the rules around spending the organization’s money are coded directly into smart contracts which are unable to be altered. All major company decisions are made by tokenholders, creating a strong sense of community and project ownership.
+</p>
+          </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>What is a Crypto Republik?</b></h3>
+          A crypto republic is a decentralized blockchain society that has an official set of rules such as a Constitution, which is specifically designed to protect the rights of each individual Citizen. In the Crypto528 Republik, Citizens can elect Chancellors to represent them on the DAO governance board which is known as the 528 Order. By encoding the rights of Citizens into  smart contracts, the power of the society always remains in the hands of its people.
+</p>
+          </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>Who are Citizens of the Crypto Republik?</b></h3>
+          Citizens of the Republik are C-528 tokenholders and are  responsible for safeguarding the community vault and for electing representatives to the 528 Order. The role of Citizens is also to ensure that the Republik and the 528 Order is adhering to the constitution. Governance in the DAO is designed to give Citizens the ability to change, modify or revoke any aspect of the organization ensuring that all power remains in the hands of tokenholders.
+</p>
+          </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>What is the 528 Order?</b></h3>
+          Every four years the Republik will hold elections, where Citizens can cast votes to elect eight Chancellors and one Overseer to create the 528 Order. The primary function of the 528 Order is to act as a governance board that manages and guides the Republik. This is accomplished through the use of voting proposals that are submitted by Chancellors to the 528 Order. 
+      </p>
+          </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>What does a Chancellor do?</b></h3>
+          A Decentralized Autonomous Organization (DAO) is a community-based organization that is collectively owned and managed by its members. DAOs have built-in treasuries so no one has the authority to access funds without the approval of the group. Decisions are governed by proposals and voting to ensure everyone in the organization has a voice. Every decision and transaction is transparent, and the rules around spending the organization’s money are coded directly into smart contracts which are unable to be altered. All major company decisions are made by tokenholders, creating a strong sense of community and project ownership.
+      </p>
+      </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>Who is the Overseer?</b></h3>
+          The Overseer (O-528 holder) is an independent citizen representative that oversees the 528 Order. Unlike Chancellors (G-528 holders), the Overseer does not have any voting rights in the 528 Order. The role of the Overseer is to ensure that all voting proposals submitted are adhering to the Crypto528 constitution and bylaws.
+      </p>
+      </div>
+          </div>
+          <div className="members">
+        <div className="member-card">
+          <p><h3><b>What is a Republik Vault?</b></h3>
+          All assets of the DAO are held in the Republik Vault which can only be accessed through voting proposals that are sent to Citizens for approval. Any vote requesting access to the Vault must have a minimum quorum of 5% of total C-528 tokenholders present. If 60% of those C-528 holders who are participating vote in favor, the proposal will pass and be approved for action.
+      </p>
+      </div>
+          </div>
+        </Carousel>
+      </div>
+      { <section className="white-paper" id="white-paper">
+<ScrollAnimation
+animateIn="slideInUp"
+animateOut="slideOutUp"
+duration={1}
+>
+<h2 className="white-paper-title">
+<span className="orange">WhitePaper</span> 
+</h2>
+</ScrollAnimation>
+<p className="white-paper-content">
+<b>Please see our Whitepaper below</b> 
+</p>
+<div className="pdf-container">
+<div className="pdf-download bg-white">
+<a href="https://docs.crypto528.com/" target="_blank" rel="noopener noreferrer">
+  <p>View</p>
+  <b>
+    <p>WhitePaper</p>
+  </b>
+</a>
+</div>
+</div>
+        
         <h4>
           {/*<span className="orange">PROJECT</span> SPONSORS
 </h4>
@@ -997,7 +1025,7 @@ export default function Home() {
 </div>
 </div>
 </section>
-{/* <section className="white-paper" id="white-paper">
+{ <section className="white-paper" id="white-paper">
 <ScrollAnimation
 animateIn="slideInUp"
 animateOut="slideOutUp"
@@ -1049,7 +1077,10 @@ Please see our Whitepaper below
         </div>
 </Carousel>
 </div>
-</section> */}
+</section>
+ */}
+ <br />
+ <br />
           <footer className="footer">
             <div className="upper-footer">
               <div className="contact" id="contact">
@@ -1095,7 +1126,7 @@ Please see our Whitepaper below
                     <img src={redditIcon} alt="reddit" className="social-icon" />
                   </a>
                   <a
-                    href="https://medium.com/@crypto528"
+                    href="https://medium.com/@Crypto528DAO"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1109,7 +1140,7 @@ Please see our Whitepaper below
                     <img src={tiktokIcon} alt="tiktok" className="social-icon" />
                   </a>
                   <a
-                    href="https://discord.gg/kwktGavk"
+                    href="https://discord.gg/WYfAxsNz2h"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1120,15 +1151,22 @@ Please see our Whitepaper below
               <div className="about">
                 <span className="orange">About</span>
                 <a href="#home-content" onClick={scrollIntoView}>
-                  Overview
+                  Home
                 </a>
                 <a href="#our-team" onClick={scrollIntoView}>
-                  Team
+                  About Us
                 </a>
                 <a href="#tokenomics" onClick={scrollIntoView}>
                   Tokenomics
                 </a>
+                <a href="#tokenomics" onClick={scrollIntoView}>
+                  Purchase Agreement
+                </a>
+                <a href="#tokenomics" onClick={scrollIntoView}>
+                  Blog 
+                </a>
               </div>
+              
               <div className="newsletter">
                 <span className="orange">Newsletter</span>
                 <p>Please enter your e-mail to receive our token updates.</p>
@@ -1162,6 +1200,11 @@ Please see our Whitepaper below
           </footer>
           </h4>
           </section>
-          </ParallaxProvider>
+          }
+          </section>
+          </ParallaxProvider> 
+
   );
+  {}
   }
+
