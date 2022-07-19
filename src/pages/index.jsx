@@ -181,6 +181,7 @@ export default function Home() {
   let classes = useStyles();
 
   return (
+    <center>
     <ParallaxProvider>
       <Header>
         <button
@@ -361,8 +362,7 @@ export default function Home() {
             <img src={discordIcon} alt="discord" className="social-icon" />
           </a>
         </div>
-        <br />
-        <br />
+      
         <Carousel
           infiniteLoop
           useKeyboardArrows
@@ -378,7 +378,7 @@ export default function Home() {
           <div key="content-1" className="flexme">
             <div className="home-content">
               <h2>Welcome to Crypto528 DAO Republik!</h2>
-              <p>A crypto Republik made by the people...for the people</p>
+              <p>A crypto Republik made by the people,for the people</p>
               <img src={fullGlobe} alt="" className="small-scr-img" />
             </div>
             <div className="dod">
@@ -413,8 +413,13 @@ export default function Home() {
           </div>
         </Carousel>
       </section>
-      <br />
-      <br />
+      
+      <section id="home-content">
+        <div id="top-subscribe">
+          <div className="subscribe">
+          </div>
+          </div>
+          </section>
     <section className="token-economics" id="token-economics">
         <ScrollAnimation
           animateIn="slideInUp"
@@ -934,29 +939,8 @@ export default function Home() {
           </div>
         </Carousel>
       </div>
-      { <section className="white-paper" id="white-paper">
-<ScrollAnimation
-animateIn="slideInUp"
-animateOut="slideOutUp"
-duration={1}
->
-<h2 className="white-paper-title">
-<span className="orange">WhitePaper</span> 
-</h2>
-</ScrollAnimation>
-<p className="white-paper-content">
-<b>Please see our Whitepaper below</b> 
-</p>
-<div className="pdf-container">
-<div className="pdf-download bg-white">
-<a href="https://docs.crypto528.com/" target="_blank" rel="noopener noreferrer">
-  <p>View</p>
-  <b>
-    <p>WhitePaper</p>
-  </b>
-</a>
-</div>
-</div>
+      </section>
+      {
         
         <h4>
           {/*<span className="orange">PROJECT</span> SPONSORS
@@ -1198,12 +1182,11 @@ Please see our Whitepaper below
             <span className="copyright">© crypto528 Team</span>
           </footer>
           </h4>
-          </section>
+          
           }
-          </section>
           </ParallaxProvider> 
-
-  );
-  {}
+          </center>
+        
+  )
   }
 

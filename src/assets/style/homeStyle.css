@@ -313,7 +313,7 @@ header .social-contact {
   
 }
 #top-subscribe {
-  position: sticky;
+  position:absolute;
   z-index: 90;
   bottom: 100px;
   width: calc((100% - 16rem) * 0.6);
@@ -843,6 +843,7 @@ section h2 {
 
   .home-content {
     padding: 0;
+    
   }
 
   .home-content h2 {
