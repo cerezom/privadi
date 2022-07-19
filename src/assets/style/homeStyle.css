@@ -25,7 +25,7 @@ nav a,
 }
 
 .carousel .slide img {
-  height: 90%;
+  height: 100%;
 }
 
 .carousel.carousel-slider li.slide.selected {
@@ -299,6 +299,7 @@ header .social-contact {
   border-radius: 0px 6px 6px 0px;
   width: 30%;
   cursor: pointer;
+
 }
 
 .subscribe {
@@ -312,7 +313,7 @@ header .social-contact {
   
 }
 #top-subscribe {
-  position: absolute;
+  position: sticky;
   z-index: 90;
   bottom: 100px;
   width: calc((100% - 16rem) * 0.6);

@@ -272,7 +272,6 @@ export default function Home() {
           <div className="subscribe">
             <br />
             <br />
-
             <Tooltip
               open={openTooltip}
               classes={{ arrow: classes.arrow, tooltip: classes.tooltip }}
@@ -790,12 +789,12 @@ export default function Home() {
         <div className="member-card">
           <img src={ayio} alt="Ayiolely Lurogho" className="profile-img" />
           <p className="member-name orange"> Ayoleyi Lurogho</p>
-          <p className="member-title">Product Designer</p>
+          <p className="member-title">Project Leader</p>
           <div className="member-social-acct">
-            <a href="https://www.linkedin.com/in/ayoleyi-lurogho/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/hayatosuzuki801293/" target="_blank" rel="noopener noreferrer">
               <img src={linkedin} alt="linkedin logo" />
             </a>
-            <a href="https://twitter.com/lurogho_eth" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <img src={twitter} alt="" />
             </a>
           </div>
